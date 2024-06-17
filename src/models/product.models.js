@@ -19,8 +19,12 @@ const productSchema = new mongoose.Schema({
 
   },
   price: {
-    type:String,
-    required: true
+    type:Number,
+    required: true,
+    validate: {
+        validator: Number.isInteger,
+        message: '{VALUE} is not an integer value'
+      }
 
   },
   size: {
