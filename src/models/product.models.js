@@ -28,7 +28,7 @@ const productSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function(v) {
-        const validsizes = ['XS', 'S', 'M', 'L', 'XL'];
+        const validsizes = ['XS', 'S', 'M', 'L', 'XL',"36","37","38","39","40","41"];
         return v.every(s => validsizes.includes(s));
       },
       message: 'Invalid value'

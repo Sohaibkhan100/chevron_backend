@@ -98,4 +98,44 @@ router.post("/login", (req, res, next) => {
       });
     });
 });
+
+router.get("/", checkAuth, async (req, res, next) => {
+  try {
+    const users = await user.find().exec();
+    res.status(200).json({
+      users: users,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+});
+
+router.get("/:id", checkAuth, async (req, res, next) => {
+  const userId = req.params.id;
+
+  try {
+    const foundUser = await user.findById(userId).exec();
+
+    if (!foundUser) {
+      return res.status(404).json({
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      user: foundUser,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+});
+
+
+
 export default router;
