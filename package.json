@@ -1,0 +1,29 @@
+{
+  "name": "chevron-backend",
+  "version": "1.0.0",
+  "description": "a clothing brand",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sohaibkhan100/chevron_backend.git"
+  },
+  "author": "sohaib x fariya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sohaibkhan100/chevron_backend/issues"
+  },
+  "homepage": "https://github.com/Sohaibkhan100/chevron_backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.3"
+  }
+}
