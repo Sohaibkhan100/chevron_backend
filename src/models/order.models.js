@@ -2,7 +2,42 @@
 import { Double } from 'mongodb';
 import mongoose, { Schema } from 'mongoose';
 
+const customsizeSchema = new mongoose.Schema({
+    length: {
+        type: Number,
+        required: true,
+      },
 
+    shoulder: {           
+        type: Number,
+        required: true,
+      }, 
+
+    chest: {
+        type: Number,
+        required: true,
+      }, 
+
+    front_border: {
+        type: Number,
+        required: true,
+      }, 
+
+    back_border: {
+        type: Number,
+        required: true,
+      },  
+    arm_hole: {
+        type: Number,
+        required: true,
+      }, 
+
+    sleeve_length: {
+        type: Number,
+        required: true,
+      },
+
+  }, { _id: false }); 
 
 const productSchema = new mongoose.Schema({
     title: {
@@ -15,11 +50,9 @@ const productSchema = new mongoose.Schema({
     },
     size: {
       type: String,
-      required: true
     },
     custom_size: {
-        type: String,
-        required: true
+        type: [customsizeSchema],
       },
     quantity: {
         type: Number,
