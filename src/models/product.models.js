@@ -2,13 +2,6 @@
 import { Double } from 'mongodb';
 import mongoose, { Schema } from 'mongoose';
 
-// "title": "Sample Product",
-// "price": 29.99,
-// "size": "M",
-// "color": "Red",
-// "category": "Clothing",
-// "product_details": "High-quality cotton shirt",
-// "ratings": 5
 
 const productSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
@@ -19,12 +12,8 @@ const productSchema = new mongoose.Schema({
 
   },
   price: {
-    type:Number,
+    type:String,
     required: true,
-    validate: {
-        validator: Number.isInteger,
-        message: '{VALUE} is not an integer value'
-      }
 
   },
   size: {
